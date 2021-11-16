@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'pages/part_01/home_page.dart';
-import 'pages/part_01/page_01.dart';
-import 'pages/part_01/page_02.dart';
-import 'pages/part_01/page_03.dart';
-import 'pages/part_01/page_04.dart';
-import 'pages/part_02/list_page.dart';
-import 'pages/part_02/detail_page.dart';
+import 'core/navigator_observer_custom.dart';
+import 'pages/part_03/detail_page.dart';
+import 'pages/part_03/detail_page3.dart';
+import 'pages/part_03/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,16 +19,29 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //home: const HomePage(),
-      initialRoute: '/list_page',
+      navigatorObservers: [
+        NavigatorObserverCustom(),
+      ],
+      onGenerateRoute: (settings) {
+        if (settings.name == '/') {
+          return MaterialPageRoute(
+            settings: settings,
+            builder: (context) => const HomePage2(),
+          );
+        }
+        if (settings.name == '/detail_page') {
+          final parameter = settings.arguments as String?;
+          return MaterialPageRoute(
+            settings: settings,
+            builder: (context) => DetailPage2(
+              parameter: parameter ?? 'Parameter not send',
+            ),
+          );
+        }
+      },
       routes: {
-        '/': (_) => const HomePage(),
-        '/page01': (_) => const Page01(),
-        Page02.routeName: (_) => const Page02(),
-        '/page03': (_) => const Page03(),
-        '/page04': (_) => const Page04(),
-        '/list_page': (_) => const ListPage(),
-        '/detail_page': (_) => const DetailPage(),
+        '/': (_) => const HomePage2(),
+        '/detail_page3': (_) => const DetailPage3(),
       },
     );
   }
