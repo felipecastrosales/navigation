@@ -22,6 +22,8 @@ class HomePage2 extends StatelessWidget {
                   '/detail_page',
                   arguments: 'Parameter by pushNamed',
                 );
+                // ignore: avoid_print
+                print('Go to detail_page');
               },
               child: const Text('DetailPage | pushNamed'),
             ),
@@ -40,6 +42,15 @@ class HomePage2 extends StatelessWidget {
                 );
               },
               child: const Text('DetailPage | push'),
+            ),
+            TextButton(
+              onPressed: () async {
+                var message = await Navigator.of(context)
+                    .pushNamed('/detail_page3');
+                // ignore: avoid_print
+                print('Message: $message');
+              },
+              child: const Text('DetailPage 03'),
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'core/navigator_observer_custom.dart';
 import 'pages/part_03/detail_page.dart';
+import 'pages/part_03/detail_page3.dart';
 import 'pages/part_03/home_page.dart';
 
 void main() {
@@ -37,6 +38,10 @@ class MyApp extends StatelessWidget {
             ),
           );
         }
+      },
+      routes: {
+        '/': (_) => const HomePage2(),
+        '/detail_page3': (_) => const DetailPage3(),
       },
     );
   }
