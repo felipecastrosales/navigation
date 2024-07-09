@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'page_03.dart';
 
 class Page02 extends StatelessWidget {
+  const Page02({super.key});
+
   static const String routeName = '/page02';
-  const Page02({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

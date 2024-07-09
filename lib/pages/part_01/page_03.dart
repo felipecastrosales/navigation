@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'page_04.dart';
 
 class Page03 extends StatelessWidget {
-  const Page03({Key? key}) : super(key: key);
+  const Page03({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,6 @@ class Page03 extends StatelessWidget {
             child: const Text('Page | 04 -> named'),
             onPressed: () {
               Navigator.of(context).pushNamed('/page04');
-
             },
           ),
         ],
