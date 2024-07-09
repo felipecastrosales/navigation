@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage2 extends StatelessWidget {
-  final String parameter;
   const DetailPage2({
-    Key? key,
+    super.key,
     required this.parameter,
-  }) : super(key: key);
+  });
+
+  final String parameter;
 
   @override
   Widget build(BuildContext context) {

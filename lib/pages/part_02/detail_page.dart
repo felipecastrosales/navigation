@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  const DetailPage({super.key});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -14,7 +13,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final param =
           ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
       setState(() {
@@ -29,7 +28,9 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         title: const Text('Details'),
       ),
-      body: Center(child: Text('Id is: $id'),),
+      body: Center(
+        child: Text('Id is: $id'),
+      ),
     );
   }
 }

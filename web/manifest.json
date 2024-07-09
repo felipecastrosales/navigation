@@ -1,6 +1,6 @@
 {
-    "name": "flutter_first_stops",
-    "short_name": "flutter_first_stops",
+    "name": "navigation",
+    "short_name": "navigation",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'detail_page.dart';
 
 class HomePage2 extends StatelessWidget {
-  const HomePage2({Key? key}) : super(key: key);
+  const HomePage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +45,8 @@ class HomePage2 extends StatelessWidget {
             ),
             TextButton(
               onPressed: () async {
-                var message = await Navigator.of(context)
-                    .pushNamed('/detail_page3');
+                var message =
+                    await Navigator.of(context).pushNamed('/detail_page3');
                 // ignore: avoid_print
                 print('Message: $message');
               },
